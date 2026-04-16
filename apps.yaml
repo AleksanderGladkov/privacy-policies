@@ -1,0 +1,61 @@
+developer:
+  name: "Aleksandr Gladkov"
+  email: "algladkov.dev@gmail.com"
+
+common_sdks:
+  - name: "Google AdMob"
+    data: "Advertising ID, ad interaction data (impressions, clicks), device information (OS version, screen size, locale)"
+    purpose: "Serving advertisements"
+    policy_url: "https://policies.google.com/technologies/ads"
+  - name: "Google User Messaging Platform (UMP)"
+    data: "Consent preferences"
+    purpose: "GDPR and consent management"
+    policy_url: "https://policies.google.com/privacy"
+  - name: "Firebase Analytics"
+    data: "App usage events, session data, screen views, device information (device model, OS version, app version)"
+    purpose: "App analytics and usage insights"
+    policy_url: "https://firebase.google.com/support/privacy"
+  - name: "Firebase Crashlytics"
+    data: "Crash logs, stack traces, device information (device model, OS version, manufacturer)"
+    purpose: "Crash reporting and stability monitoring"
+    policy_url: "https://firebase.google.com/support/privacy"
+  - name: "Google Play Billing"
+    data: "Purchase history, purchase state, transaction dates"
+    purpose: "Processing in-app purchases"
+    policy_url: "https://policies.google.com/privacy"
+
+apps:
+  bg-remover:
+    display_name: "BG Remover - Background Cut"
+    description: "A photo background removal and replacement tool for Android."
+    effective_date: "2026-04-16"
+    permissions:
+      - name: "Camera"
+        reason: "To capture photos for background removal"
+      - name: "Photo Library Access"
+        reason: "To select photos from your gallery for processing"
+    extra_sdks:
+      - name: "ML Kit Subject Segmentation"
+        data: "None — all processing is on-device"
+        purpose: "On-device background removal"
+        policy_url: "https://developers.google.com/ml-kit/terms"
+    on_device_processing:
+      - "All photo processing (background removal, editing, filters) happens entirely on your device"
+      - "Photos are never uploaded to any server"
+      - "ML models run locally on your device via Google Play Services"
+    has_billing: true
+
+  swipe-pics:
+    display_name: "SwipePics"
+    description: "A photo and video cleanup tool for Android."
+    effective_date: "2026-03-26"
+    permissions:
+      - name: "Read Media Images / Read Media Video"
+        reason: "To display your photos and videos within the app so you can decide which to keep or delete"
+      - name: "Read External Storage"
+        reason: "Legacy equivalent of media access for older Android versions (Android 10–12)"
+    uses_common_sdks: false
+    has_billing: false
+    on_device_processing:
+      - "All operations happen entirely on your device"
+      - "No data is collected, stored, or transmitted"
