@@ -29,11 +29,8 @@ apps:
     display_name: "BG Remover - Background Cut"
     description: "A photo background removal and replacement tool for Android."
     effective_date: "2026-04-16"
-    permissions:
-      - name: "Camera"
-        reason: "To capture photos for background removal"
-      - name: "Photo Library Access"
-        reason: "To select photos from your gallery for processing"
+    permissions: []
+    # App uses Android Photo Picker API — no permissions required
     extra_sdks:
       - name: "ML Kit Subject Segmentation"
         data: "None — all processing is on-device"
